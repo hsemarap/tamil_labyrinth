@@ -1,0 +1,19 @@
+<?php
+define("LOGGEDIN", "Hello world.");
+session_start();
+
+/*
+$facebook = new Facebook(array(  'appId'  => '493564590729179',  'secret' => '50a0f4d9eacd7d6498cc5a71814762e3'));
+$req = $facebook->getSignedRequest();
+if( $req["page"]["liked"] || $_SESSION['userId'])
+*/
+if(!isset($_SESSION['User']) && empty($_SESSION['User']))header("location: login.php");
+else
+include "game.php";
+/*
+else {
+echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
+echo "<h2 style='text-align:center;top:40%;'>Please Like Our Facebook Page to Start Game</h2>";
+echo "<h2 style='text-align:center;top:50%;'>வணக்கம், எங்களது பெச்பூக்  பக்கத்தை லைக் செய்த பின்பு விளையாடவும்.</h2>";
+}*/
+?>
